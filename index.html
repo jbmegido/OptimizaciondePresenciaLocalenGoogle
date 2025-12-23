@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización Presencia Local Google | Negocios España</title>
+    <meta name="description" content="Ordenamos presencia local para que Google entienda dónde operas. Web por zonas, GBP optimizado, confianza real. Revisión sin compromiso.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .btn {
+            background-color: #1e40af;
+            color: #ffffff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+
+        .btn-secondary:hover {
+            background-color: #eff6ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            background-color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        section:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #111827;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            color: #111827;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #4b5563;
+            font-size: 1.125rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin: 32px 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .hero-bullets li {
+            color: #6b7280;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .hero-bullets li:not(:last-child)::after {
+            content: '·';
+            position: absolute;
+            right: -15px;
+            color: #d1d5db;
+        }
+
+        /* Three Column Grid */
+        .three-col-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .col-card {
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        section:nth-child(even) .col-card {
+            background-color: #f9fafb;
+        }
+
+        /* Lists */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .check-list li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            color: #4b5563;
+            font-size: 1.125rem;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .bullet-list li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            color: #4b5563;
+            font-size: 1.125rem;
+        }
+
+        .bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #1e40af;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1e40af;
+        }
+
+        .micro-premium {
+            font-size: 0.875rem;
+            color: #9ca3af;
+            text-align: center;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 16px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-text {
+            color: #6b7280;
+            margin-top: 16px;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-bullets {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .hero-bullets li:not(:last-child)::after {
+                display: none;
+            }
+
+            .three-col-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Presencia Local Verificada</div>
+                <a href="#formulario-revision" class="btn">Solicitar revisión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Optimización de presencia local para que Google entienda tu negocio</h1>
+            <p class="subtitle">Ayudamos a negocios locales en España a ordenar su web, ficha de Google y señales de confianza para visibilidad estable. Estructura válida para cualquier ciudad o provincia.</p>
+            <ul class="hero-bullets">
+                <li>Sin llamadas</li>
+                <li>Sin anuncios</li>
+                <li>Sin promesas de ranking</li>
+            </ul>
+            <a href="#formulario-revision" class="btn">Solicitar revisión de presencia local</a>
+        </div>
+    </section>
+
+    <!-- Problema -->
+    <section id="problemas-presencia-local">
+        <div class="container">
+            <h2>La mayoría de negocios locales no tienen un problema de marketing</h2>
+            <p>Google no entiende claramente en qué zonas trabajas, qué servicios ofreces exactamente ni si eres un negocio activo y confiable.</p>
+            <ul class="bullet-list">
+                <li>Tu web no refleja con claridad las zonas reales donde operas</li>
+                <li>Tu ficha de Google tiene información genérica, desactualizada o incoherente</li>
+                <li>Google no encuentra señales de que seas un negocio activo, confiable y verificable</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contexto Google -->
+    <section id="verificacion-google">
+        <div class="container">
+            <h2>Google prioriza negocios que puede verificar</h2>
+            <p>Google comprueba horarios, servicios, actividad, reseñas e imágenes reales. Información imprecisa, contradictoria o genérica reduce tu visibilidad local. No se trata de trucos, sino de claridad: Google premia a los negocios que puede entender y verificar con facilidad.</p>
+        </div>
+    </section>
+
+    <!-- Sistema 3 capas -->
+    <section id="presencia-local-google-espana">
+        <div class="container">
+            <h2>Cómo construimos presencia local sólida</h2>
+            <div class="three-col-grid">
+                <div class="col-card">
+                    <h3>Relevancia</h3>
+                    <p>Web estructurada por zonas reales y páginas específicas que muestran exactamente dónde operas y qué ofreces en cada ubicación.</p>
+                </div>
+                <div class="col-card">
+                    <h3>Claridad</h3>
+                    <p>Optimización completa Google Business Profile: servicios claros, categorías coherentes, información actualizada y alineada con tu web.</p>
+                </div>
+                <div class="col-card">
+                    <h3>Confianza</h3>
+                    <p>Reseñas reales de clientes satisfechos + fotos auténticas del negocio que demuestran actividad y profesionalidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué hacemos -->
+    <section id="seo-local-negocios">
+        <div class="container">
+            <h2>Qué hacemos exactamente</h2>
+            <ul class="check-list">
+                <li>Estructuramos tu web para reflejar tu cobertura real por zonas, con páginas específicas y contenido coherente</li>
+                <li>Creamos o optimizamos tu ficha Google Business Profile con categorías precisas, servicios claros y datos actualizados</li>
+                <li>Alineamos reseñas, fotos y actividad con los servicios reales que ofreces para generar confianza verificable</li>
+                <li>Eliminamos incoherencias entre tu web, tu ficha de Google y la realidad de tu negocio</li>
+            </ul>
+            <p><strong>No campañas. No posiciones prometidas. Claridad y coherencia.</strong></p>
+        </div>
+    </section>
+
+    <!-- Optimización Google Business Profile -->
+    <section id="optimizacion-google-business-profile">
+        <div class="container">
+            <h2>Optimización completa de tu Google Business Profile</h2>
+            <p>Tu ficha de Google es tu escaparate local. La optimizamos para que Google pueda verificar tu negocio con claridad:</p>
+            <ul class="check-list">
+                <li>Categorías principales y secundarias alineadas con tu actividad real</li>
+                <li>Descripción clara de servicios y zonas de cobertura</li>
+                <li>Horarios, teléfono y dirección verificables y actualizados</li>
+                <li>Fotografías auténticas que muestran tu negocio en acción</li>
+                <li>Gestión de reseñas y respuestas coherentes con tu marca</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Para quién -->
+    <section id="clientes-ideal">
+        <div class="container">
+            <h2>Este sistema es para negocios que...</h2>
+            <ul class="check-list">
+                <li>Operan en una o varias zonas específicas y quieren que Google lo entienda con claridad</li>
+                <li>Quieren visibilidad estable y duradera, no campañas temporales</li>
+                <li>Prefieren claridad, coherencia y transparencia a trucos o promesas vacías</li>
+                <li>No quieren depender solo de anuncios pagados para conseguir clientes locales</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Google entiende bien tu negocio?</h2>
+            <a href="#formulario-revision" class="btn">Solicitar revisión</a>
+            <p class="cta-text">Sin llamadas. Sin compromiso.</p>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="formulario-revision">
+        <div class="container">
+            <h2>Solicitud de revisión de presencia local</h2>
+            <form id="revision-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="negocio">Negocio *</label>
+                    <input type="text" id="negocio" name="negocio" required>
+                </div>
+                <div class="form-group">
+                    <label for="zona">Zona principal *</label>
+                    <input type="text" id="zona" name="zona" placeholder="Ej: Madrid, Barcelona, Valencia..." required>
+                </div>
+                <div class="form-group">
+                    <label for="enlace-google">Enlace a tu ficha de Google (opcional)</label>
+                    <input type="url" id="enlace-google" name="enlace-google" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Enviar solicitud</button>
+                <p class="micro-premium">Revisamos manualmente cada solicitud.</p>
+                <div id="success-message" class="success-message">
+                    ¡Gracias! Revisamos tu solicitud en las próximas 24 horas.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Manejo del formulario
+        document.getElementById('revision-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                negocio: document.getElementById('negocio').value,
+                zona: document.getElementById('zona').value,
+                enlaceGoogle: document.getElementById('enlace-google').value,
+                email: document.getElementById('email').value
+            };
+            
+            console.log('Datos del formulario:', formData);
+            
+            // Mostrar mensaje de éxito
+            document.getElementById('success-message').classList.add('show');
+            
+            // Resetear formulario
+            this.reset();
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                document.getElementById('success-message').classList.remove('show');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
