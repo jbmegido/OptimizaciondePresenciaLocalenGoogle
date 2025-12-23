@@ -451,11 +451,11 @@
                 </div>
                 <div class="form-group">
                     <label for="zona">Zona principal *</label>
-                    <input type="text" id="zona" name="zona" placeholder="Ej: Madrid, Barcelona, Valencia..." required>
+                    <input type="text" id="zona" name="zona_principal" placeholder="Ej: Madrid, Barcelona, Valencia..." required>
                 </div>
                 <div class="form-group">
                     <label for="enlace-google">Enlace a tu ficha de Google (opcional)</label>
-                    <input type="url" id="enlace-google" name="enlace-google" placeholder="https://...">
+                    <input type="url" id="enlace-google" name="enlace_google" placeholder="https://...">
                 </div>
                 <div class="form-group">
                     <label for="email">Email *</label>
@@ -469,6 +469,13 @@
             </form>
         </div>
     </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("TInhixAuLBkF3El9k");
+        })();
+    </script>
 
     <script>
         // Smooth scroll para enlaces internos
@@ -485,30 +492,42 @@
             });
         });
 
-        // Manejo del formulario
         document.getElementById('revision-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = {
-                nombre: document.getElementById('nombre').value,
-                negocio: document.getElementById('negocio').value,
-                zona: document.getElementById('zona').value,
-                enlaceGoogle: document.getElementById('enlace-google').value,
-                email: document.getElementById('email').value
-            };
+            // Deshabilitar el botón durante el envío
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
             
-            console.log('Datos del formulario:', formData);
-            
-            // Mostrar mensaje de éxito
-            document.getElementById('success-message').classList.add('show');
-            
-            // Resetear formulario
-            this.reset();
-            
-            // Ocultar mensaje después de 5 segundos
-            setTimeout(() => {
-                document.getElementById('success-message').classList.remove('show');
-            }, 5000);
+            // Enviar el email con EmailJS
+            emailjs.sendForm('service_1bmf37n', 'template_v713iom', this)
+                .then(function(response) {
+                    console.log('Email enviado con éxito', response.status, response.text);
+                    
+                    // Mostrar mensaje de éxito
+                    document.getElementById('success-message').classList.add('show');
+                    
+                    // Resetear formulario
+                    document.getElementById('revision-form').reset();
+                    
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        document.getElementById('success-message').classList.remove('show');
+                    }, 5000);
+                    
+                    // Restaurar botón
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                }, function(error) {
+                    console.error('Error al enviar el email:', error);
+                    alert('Hubo un error al enviar tu solicitud. Por favor, inténtalo de nuevo.');
+                    
+                    // Restaurar botón
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                });
         });
     </script>
 </body>
